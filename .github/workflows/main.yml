@@ -15,14 +15,14 @@ jobs:
     - name: Checkout git repo
       uses: actions/checkout@v2
       
-    - run: docker info
-    - run: ls /var/lib/docker/overlay2
-
-    - name: Cache docker stage images
-      uses: actions/cache@v1
-      with:
-        path: /var/lib/docker/overlay2
-        key: ${{ runner.os }}-docker-staged-builds
+#    - run: docker info
+#    - run: ls /var/lib/docker/overlay2
+#
+#    - name: Cache docker stage images
+#      uses: actions/cache@v1
+#      with:
+#        path: /var/lib/docker/overlay2
+#        key: ${{ runner.os }}-docker-staged-builds
     
     - name: Build and Push to Humanitec
       uses: humanitec/build-push-to-humanitec@v1
